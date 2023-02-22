@@ -161,17 +161,16 @@ function App() {
 			id="main"
 			onClick={e => {
 				e.target.classList.toggle('none');
-				console.log(e.target.classList);
 			}}>
-			{states.map(state => (
+			{states.map((state, idx) => (
 				<ul>
-					<li>{state.name}</li>
-					{state.cities.map(city => (
+					<li id={'state' + (idx + 1)}>{state.name}</li>
+					{state.cities.map((city, idx) => (
 						<ul>
-							<li>{city.name}</li>
-							{city.towns.map(town => (
+							<li id={'city' + (idx + 1)}>{city.name}</li>
+							{city.towns.map((town, idx) => (
 								<ul>
-									<li>{town.name}</li>
+									<li id={'town' + (idx + 1)}>{town.name}</li>
 								</ul>
 							))}
 						</ul>
