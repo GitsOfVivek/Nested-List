@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import './../styles/App.css';
 
 // Do not alter the states const and values inside it.
@@ -155,7 +155,6 @@ const states = [
 ];
 
 function App() {
-	// const [curCity, setCurCity] = useState(false);
 	return (
 		<div
 			id="main"
@@ -164,7 +163,9 @@ function App() {
 			}}>
 			{states.map((state, idx) => (
 				<ul>
-					<li id={'state' + (idx + 1)}>{state.name}</li>
+					<li className="none" id={'state' + (idx + 1)}>
+						{state.name}
+					</li>
 					{state.cities.map((city, idx) => (
 						<ul>
 							<li id={'city' + (idx + 1)}>{city.name}</li>
