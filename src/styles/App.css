@@ -13,6 +13,3 @@ button {
 .bg-pink {
 	background-color: pink;
 }
-.none ~ ul {
-	display: none;
-}
