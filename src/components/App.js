@@ -8,7 +8,15 @@ import State from './State';
 function App() {
 	return (
 		<div id="main">
-			<State states={states} />
+			{states.map((state, idx) => (
+				<ul key={Math.random()}>
+					<State
+						id={'state' + (idx + 1)}
+						name={state.name}
+						cities={state.cities}
+					/>
+				</ul>
+			))}
 		</div>
 	);
 }

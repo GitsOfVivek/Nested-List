@@ -1,19 +1,35 @@
 import React, { useState } from 'react';
 import City from './City';
 
-const State = ({ states }) => {
-	const [flag, setFlag] = useState(false);
-	return (
-		<ul>
-			{states.map((state, idx) => (
-				<>
-					<li onClick={() => setFlag(!flag)} id={'state' + (idx + 1)}>
-						{state.name}
-					</li>
-					{flag && <City cities={state.cities} />}
-				</>
+const State = ({ name, cities, id }) => {
+	const [showState, setShowState] = useState(false);
+	return showState ? (
+		<>
+			<li
+				id={id}
+				onClick={() => {
+					setShowState(!showState);
+				}}>
+				{name}
+			</li>
+			{cities.map((city, idx) => (
+				<ul key={Math.random()}>
+					<City
+						id={'city' + (idx + 1)}
+						name={city.name}
+						towns={city.towns}
+					/>
+				</ul>
 			))}
-		</ul>
+		</>
+	) : (
+		<li
+			id={id}
+			onClick={() => {
+				setShowState(!showState);
+			}}>
+			{name}
+		</li>
 	);
 };
 

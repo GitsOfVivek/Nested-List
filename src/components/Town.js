@@ -1,15 +1,7 @@
 import React from 'react';
 
-const Town = ({ towns }) => {
-	return (
-		<ul>
-			{towns.map((town, idx) => (
-				<li key={Math.random()} id={'town' + (idx + 1)}>
-					{town.name}
-				</li>
-			))}
-		</ul>
-	);
+const Town = ({ name, id }) => {
+	return <li id={'town' + (id + 1)}>{name}</li>;
 };
 
 export default Town;
